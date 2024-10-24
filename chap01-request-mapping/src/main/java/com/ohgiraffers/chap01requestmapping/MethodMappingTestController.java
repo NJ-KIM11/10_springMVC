@@ -16,7 +16,6 @@ public class MethodMappingTestController {
     public String registMenu(Model model){
         // Model 객체는 응답을 위한 객체
         model.addAttribute("message", "신규 메뉴 등록용 핸들러 메소드 호출");
-
         return "mappingResult";
     }
 
