@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${message}"></h1>
+
+    <div th:if="${img !=null}">
+        <img th:src="@{${img}}" style="max-width: 100%">
+            <!-- 특정 속성을 url 로 변환 -->
+    </div>
+
+    <div th:if="${imgMap != null}">
+        <ul th:each="singleImgMap : ${imgMap}">
+            <li>
+                <img th:src="@{${singleImgMap.getKey()}}" style="max-width: 100%">
+                <p th:text="${singleImgMap.getValue()}"></p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
