@@ -40,4 +40,26 @@
             'Y'
         )
     </insert>
+
+    <update id="updateMenu" parameterType="com.ohgiraffers.understand.dto.MenuDTO">
+        UPDATE TBL_MENU
+            <trim prefix="SET" suffixOverrides=",">
+                <if test="name != null and !''.equals(name)">
+                    MENU_NAME = #{name},
+                </if>
+                <if test="price != null and price != 0">
+                    MENU_PRICE = #{price},
+                </if>
+                <if test="categoryCode != null and categoryCode != 0">
+                    CATEGORY_CODE = #{categoryCode}
+                </if>
+            </trim>
+        WHERE MENU_CODE = #{code}
+    </update>
+
+    <delete id="deleteMenu" parameterType="com.ohgiraffers.understand.dto.MenuDTO">
+        DELETE
+            FROM TBL_MENU
+        WHERE MENU_CODE = #{code}
+    </delete>
 </mapper>

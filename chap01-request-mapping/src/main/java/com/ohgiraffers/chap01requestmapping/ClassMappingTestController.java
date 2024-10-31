@@ -26,7 +26,7 @@ public class ClassMappingTestController {
     *  @PathVariable 어노테이션을 이용해 변수를 받아올 수 있다..
     *  path variable 로 전달되는 {변수명}은 반드시 매개변수명과 동일해야 한다.
     *  만약 동일하지 않으면 @PathVariable("이름")을 설정해 주어야 한다.
-    *  세가지 변수명은 일치시켜주는게 좋다(에러 방지)
+    *  세가지 변수명은 일치시@켜주는게 좋다(에러 방지)
     * */
     @GetMapping("detail/{orderNo}")
     public String selectOrderDetail(Model model, @PathVariable("orderNo") int orderNo) {
